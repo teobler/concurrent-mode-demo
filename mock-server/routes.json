@@ -1,3 +1,4 @@
 {
-  "/api/fake-list": "/fakeList"
+  "/api/fake-list": "/fakeList",
+  "/api/fake-user": "/fakeUser"
 }
