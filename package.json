@@ -13,12 +13,14 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-scripts": "3.4.1",
+    "swr": "^0.2.0",
     "typescript": "~3.7.2"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "mock": "nodemon -w mock-server -x json-server ./mock-server/db.js",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -35,5 +37,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "json-server": "^0.16.1",
+    "nodemon": "^2.0.3"
   }
 }
