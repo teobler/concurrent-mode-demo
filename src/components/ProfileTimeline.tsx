@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useRequest } from "../hooks/useRequest";
-import { BASE_API } from "../../API_CONFIG";
+import { BASE_API } from "../config";
 
 export const ProfileTimeline: React.FC = () => {
   const { data: postList } = useRequest({ baseURL: BASE_API, url: "/fakeList", method: "get" }, { suspense: true });
