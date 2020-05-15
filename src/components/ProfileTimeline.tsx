@@ -1,18 +1,22 @@
 import * as React from "react";
-import { useRequest } from "../hooks/useRequest";
-import { BASE_API } from "../config";
 
-export const ProfileTimeline: React.FC<{ id: number }> = ({ id }) => {
-  const { data: postList } = useRequest(
-    { baseURL: BASE_API, url: `/api/fake-list/${id}`, method: "get" },
-    { suspense: true },
-  );
+interface IListData {
+  id: number;
+  text: string;
+}
 
-  return (
-    <ul>
-      {postList.data.map((listData: { id: number; text: string }) => (
-        <li key={listData.id}>{listData.text}</li>
-      ))}
-    </ul>
-  );
-};
+export interface IData {
+  data: IListData[];
+}
+
+interface IProfileTimeline {
+  postList: IData;
+}
+
+export const ProfileTimeline: React.FC<IProfileTimeline> = ({ postList }) => (
+  <ul>
+    {postList.data.map((listData: { id: number; text: string }) => (
+      <li key={listData.id}>{listData.text}</li>
+    ))}
+  </ul>
+);
